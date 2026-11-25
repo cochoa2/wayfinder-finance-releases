@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Wayfinder Finance">
+  <rect width="512" height="512" rx="112" fill="#111418"/>
+  <g transform="translate(10.13 -28.97) scale(8.0613)">
+    <rect x="7" y="45" width="47" height="10" rx="3" fill="#eef0f4"/>
+    <rect x="16" y="31" width="37" height="10" rx="3" fill="#eef0f4"/>
+    <rect x="18" y="17" width="25" height="10" rx="3" transform="rotate(-8 30.5 22)" fill="#8aa5ff"/>
+  </g>
+</svg>

@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Wayfinder Finance</title>
+    <meta
+      name="description"
+      content="A personal finance and retirement-planning app that runs entirely on your own computer. No cloud, no bank logins, no telemetry, no online AI."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to the content</a>
+
+    <header class="top">
+      <div class="wrap">
+        <a class="brand" href="#main"><img src="favicon.svg" alt="" width="28" height="28" />Wayfinder Finance</a>
+        <nav aria-label="Sections">
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#download">Download</a>
+        </nav>
+        <button class="theme" id="theme" type="button" hidden>Dark theme</button>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <div class="head">
+        <h1>Your whole financial picture, kept on your own computer.</h1>
+        <p class="lede">
+          Import your bank and credit-card statements, see where your money goes, and stress-test your retirement,
+          college and big-decision plans, all from one consistent picture of your finances.
+        </p>
+        <div class="cta">
+          <a class="button" href="#download">Download for Mac or Windows</a>
+          <a href="#privacy">Why it stays private</a>
+        </div>
+
+        <ul class="strip" aria-label="At a glance">
+          <li class="stat">
+            <span class="label">Runs on</span>
+            <span class="value">Your computer</span>
+            <span class="detail">a small server only your own machine can reach</span>
+          </li>
+          <li class="stat">
+            <span class="label">Bank logins</span>
+            <span class="value">None</span>
+            <span class="detail">you download statement CSVs and import them</span>
+          </li>
+          <li class="stat">
+            <span class="label">Telemetry</span>
+            <span class="value">None</span>
+            <span class="detail">nothing about you or your use is sent anywhere</span>
+          </li>
+          <li class="stat">
+            <span class="label">AI</span>
+            <span class="value">Local only</span>
+            <span class="detail">optional, on a model running on your computer</span>
+          </li>
+        </ul>
+
+        <figure class="shot hero-shot">
+          <img
+            class="light"
+            src="img/dashboard-light.png"
+            width="1440"
+            height="900"
+            alt="The Dashboard: a strip of four headline figures (plan on track, net worth, monthly surplus, five things that need you) above three numbered readings: where you stand, what changed this month, and what needs you."
+          />
+          <img
+            class="dark"
+            src="img/dashboard-dark.png"
+            width="1440"
+            height="900"
+            loading="lazy"
+            alt="The Dashboard in the dark theme: a strip of four headline figures above three numbered readings: where you stand, what changed this month, and what needs you."
+          />
+          <figcaption>
+            The Dashboard, showing the app's synthetic demo household. Every figure in these screenshots is made up.
+          </figcaption>
+        </figure>
+      </div>
+
+      <section id="what" aria-labelledby="what-title">
+        <div class="section-head">
+          <h2 id="what-title">What it is</h2>
+          <p>A local-only personal finance and retirement planner</p>
+        </div>
+        <div class="readings">
+          <div class="reading">
+            <div class="reading-head"><span class="num ink-a">1</span><h3>What it answers</h3></div>
+            <ul class="rows">
+              <li class="q">Where does my money actually go each month, and how much am I really saving?</li>
+              <li class="q">Will my savings last through retirement, and what pays for each year once I stop working?</li>
+              <li class="q">How much should I put into each kid's 529?</li>
+              <li class="q">What happens if I take a sabbatical, move to another state, or buy a rental?</li>
+            </ul>
+          </div>
+          <div class="reading">
+            <div class="reading-head"><span class="num ink-b">2</span><h3>Who it's for</h3></div>
+            <ul class="rows">
+              <li>
+                The person in a household who does the planning
+                <span>who sits down every few weeks for a deliberate session at a desktop or laptop</span>
+              </li>
+              <li>
+                Each session starts with what changed, and what needs you
+                <span>import new statements, check that spending is categorized, see whether the plan still holds</span>
+              </li>
+              <li>
+                Explained at the level you choose
+                <span>plain English, comfortable or expert: the same figures at three depths, never three different answers</span>
+              </li>
+            </ul>
+          </div>
+          <div class="reading">
+            <div class="reading-head"><span class="num ink-c">3</span><h3>What it needs from you</h3></div>
+            <ul class="rows">
+              <li>Your household's facts <span>a setup wizard asks for ages, filing status, state, income and contributions</span></li>
+              <li>Your accounts and balances <span>added by hand, or from a brokerage positions export</span></li>
+              <li>
+                Statement CSVs from your bank's website
+                <span>three or more months gives meaningful spending numbers; twelve is better</span>
+              </li>
+            </ul>
+            <p class="note">
+              Every page draws on one engine, so a number means the same thing wherever it appears.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" aria-labelledby="features-title">
+        <div class="section-head">
+          <h2 id="features-title">What each page answers</h2>
+          <p>Each page opens with its headline figures, then up to three numbered readings</p>
+        </div>
+
+        <article class="feature" id="dashboard">
+          <div>
+            <div class="tag">Overview</div>
+            <h3>Dashboard</h3>
+            <p class="ask">Where do things stand right now?</p>
+            <p>
+              Net worth, monthly surplus, savings rate and retirement success at a glance. How your wealth splits across
+              tax buckets, how this month's spending is pacing, and a <strong>Path to FI</strong>: your FI number, how far
+              along you are, and Coast FI.
+            </p>
+            <p>
+              A list of things that need attention: uncategorized transactions, stale balances, price increases, and the
+              yearly check-in when it's due.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/dashboard-light.png" width="1440" height="900" loading="lazy" alt="The Dashboard's three readings: savings rate, path to FI and what you own; this month's spending against a usual month; and the next steps and goals." />
+            <img class="dark" src="img/dashboard-dark.png" width="1440" height="900" loading="lazy" alt="The Dashboard's three readings in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="cashflow">
+          <div>
+            <div class="tag">Money</div>
+            <h3>Cash Flow</h3>
+            <p class="ask">Where does my money go?</p>
+            <p>
+              Monthly spending by type (fixed, everyday essentials, discretionary), and a Sankey diagram of where income
+              went: from gross pay through taxes and savings taken from pay, to spending by kind and what was left over.
+              Click any month to see and fix the transactions behind it.
+            </p>
+            <ul>
+              <li><strong>Transactions:</strong> sort uncategorized merchants, search and edit anything. A fix can apply to the whole merchant and to future imports.</li>
+              <li><strong>Recurring:</strong> bills and subscriptions found automatically, with cadence, next expected date and price changes.</li>
+              <li><strong>Budgets:</strong> a pace marker per category. Bills like rent are judged on the full month.</li>
+              <li><strong>Import and Rules:</strong> drop in statement CSVs; repeated files and overlapping rows are skipped. Preview exactly which transactions a rule will change before you save it.</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/cashflow-light.png" width="1440" height="900" loading="lazy" alt="Cash Flow: monthly spending bars by type on the left, and a Sankey diagram on the right showing gross pay flowing into taxes, pre-tax savings, spending by kind, college and goal savings, and surplus." />
+            <img class="dark" src="img/cashflow-dark.png" width="1440" height="900" loading="lazy" alt="Cash Flow with its Sankey diagram, in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="accounts">
+          <div>
+            <div class="tag">Money</div>
+            <h3>Accounts</h3>
+            <p class="ask">What do I own, and where does it sit?</p>
+            <p>
+              Balances by account, how investments split across taxable, traditional, Roth and HSA accounts, and positions
+              imported from brokerage exports. Each account type gets the controls that fit it: positions for investments,
+              one balance for checking and savings, loan terms for debts.
+            </p>
+            <p>
+              Loans and credit-card balances count against net worth, with a payoff planner that compares extra payments,
+              avalanche and snowball.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/accounts-light.png" width="1440" height="900" loading="lazy" alt="Accounts: net worth, invested, cash and owed in the strip, accounts grouped by kind, and totals for net worth, retirement-investable money, cash reserves, real-estate equity and debt." />
+            <img class="dark" src="img/accounts-dark.png" width="1440" height="900" loading="lazy" alt="Accounts in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="investments">
+          <div>
+            <div class="tag">Money</div>
+            <h3>Investments</h3>
+            <p class="ask">Is my money invested the way I mean it to be?</p>
+            <ul>
+              <li><strong>Your mix</strong> against a target you choose, and the trades that would rebalance it, made inside 401(k)s, IRAs and HSAs first so selling owes no tax.</li>
+              <li><strong>Asset location:</strong> the yearly tax your taxable account's income costs at your rates, and how much less it would be with the same mix placed differently.</li>
+              <li><strong>Fees:</strong> each fund's expense ratio, what it costs this year and by retirement, and an option to include fees in the plan's returns.</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/investments-light.png" width="1440" height="900" loading="lazy" alt="Investments: your mix, where holdings sit for taxes with the yearly tax drag and a possible saving, and what your funds charge." />
+            <img class="dark" src="img/investments-dark.png" width="1440" height="900" loading="lazy" alt="Investments in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="goals">
+          <div>
+            <div class="tag">Money</div>
+            <h3>Goals</h3>
+            <p class="ask">Am I saving enough for the things before retirement?</p>
+            <p>
+              Savings goals with their progress and the monthly amount needed to hit each target date. A goal can take its
+              progress from an account's balance, and needs come before wants in the Advisor's steps.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/goals-light.png" width="1440" height="900" loading="lazy" alt="Goals: amount saved, what the deadlines need each month and what you contribute, with each goal's progress bar and a form to add a goal." />
+            <img class="dark" src="img/goals-dark.png" width="1440" height="900" loading="lazy" alt="Goals in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="retirement">
+          <div>
+            <div class="tag">Planning</div>
+            <h3>Retirement</h3>
+            <p class="ask">Will my money last?</p>
+            <p>
+              Thousands of simulated market paths, shown as a range of outcomes in today's dollars, including taxes, Social
+              Security, required minimum distributions, pre-Medicare healthcare and Medicare IRMAA surcharges. Move any
+              input to explore a what-if; results are compared against your saved plan until you save.
+            </p>
+            <ul>
+              <li><strong>Income by age:</strong> what pays for each year, and how much goes to taxes.</li>
+              <li><strong>Bridge to 59½:</strong> for early retirement, what pays for the years before 401(k) and IRA money is penalty-free.</li>
+              <li><strong>Insights:</strong> your path to financial independence and which inputs move your odds the most.</li>
+              <li><strong>Roth conversions</strong> and <strong>Social Security:</strong> strategies side by side, and the result for every claiming age from 62 to 70.</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/retirement-light.png" width="1440" height="900" loading="lazy" alt="Retirement: plan inputs on the left, the success rate and median outcomes at the top, and a Monte Carlo projection chart with 10th to 90th and 25th to 75th percentile bands and the median line." />
+            <img class="dark" src="img/retirement-dark.png" width="1440" height="900" loading="lazy" alt="Retirement's Monte Carlo projection in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="advisor">
+          <div>
+            <div class="tag">Planning</div>
+            <h3>Advisor</h3>
+            <p class="ask">What should I do next, and what if…?</p>
+            <p>
+              Prioritized recommendations: high-interest debt, emergency fund, idle cash, maxing your 401(k) and HSA,
+              catch-up contributions, backdoor Roth and plan risk. What-if scenarios for a sabbatical, relocating to
+              another state, or buying a rental property, each measured against your saved plan.
+            </p>
+            <p>
+              <strong>This year</strong> tracks what you've contributed against your plan and each limit, and holds the
+              yearly check-in.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/advisor-light.png" width="1440" height="900" loading="lazy" alt="Advisor: the order of steps from budget to other goals, the current step explained, and what else is coming up." />
+            <img class="dark" src="img/advisor-dark.png" width="1440" height="900" loading="lazy" alt="Advisor in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="college">
+          <div>
+            <div class="tag">Planning</div>
+            <h3>College</h3>
+            <p class="ask">How much should go into each 529?</p>
+            <p>
+              Each child's chance of being covered, a recommended monthly contribution, the projected 529 balance by age,
+              and the trade-off between falling short and over-saving.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/college-light.png" width="1440" height="900" loading="lazy" alt="College: 529 balances and contributions, a field of 100 dots showing one child's chance of being covered, the projected balance by age, and suggested monthly amounts." />
+            <img class="dark" src="img/college-dark.png" width="1440" height="900" loading="lazy" alt="College in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="chat">
+          <div>
+            <div class="tag">Assistant</div>
+            <h3>Chat</h3>
+            <p class="ask">Can I just ask?</p>
+            <p>
+              A local AI assistant that answers questions about your finances by running the app's own calculations. It
+              talks to a model on your own computer: Ollama, or an OpenAI-compatible local server such as LM Studio,
+              llama.cpp, Jan, LocalAI or vLLM. Only a port can be set, never another computer.
+            </p>
+            <p>Optional. Everything else works without a local model.</p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/chat-light.png" width="810" height="460" loading="lazy" alt="Chat: suggested questions, such as what if I took a three-month unpaid sabbatical next year, and a box to ask about your finances." />
+            <img class="dark" src="img/chat-dark.png" width="810" height="460" loading="lazy" alt="Chat's suggested questions in the dark theme." />
+          </figure>
+        </article>
+
+        <article class="feature" id="reminders">
+          <div>
+            <div class="tag">Settings</div>
+            <h3>Check-in reminders</h3>
+            <p class="ask">A nudge when it's been a while.</p>
+            <p>
+              Off until you turn them on. On Windows the app adds a daily scheduled task that shows a reminder on your
+              desktop when the app hasn't been opened in the time you choose.
+            </p>
+            <p>
+              Optionally it emails you through your own mail server, or sends a push notification to your own ntfy topic.
+              A reminder says only how long it has been since you last opened the app: no figures, names or accounts.
+            </p>
+          </div>
+          <figure class="shot">
+            <img class="light" src="img/reminders-light.png" width="1440" height="900" loading="lazy" alt="Reminders settings: how often to be reminded, by desktop prompt, email or ntfy push, and the full text a reminder carries." />
+            <img class="dark" src="img/reminders-dark.png" width="1440" height="900" loading="lazy" alt="Reminders settings in the dark theme." />
+          </figure>
+        </article>
+
+        <div class="also">
+          <h3>Also in the app</h3>
+          <ul class="rows">
+            <li>Glossary <span>plain-English definitions of the finance terms used in the app, also shown beside inputs and figures</span></li>
+            <li>Profile &amp; Setup <span>a setup wizard the first time; income per source and per person; a backup download</span></li>
+          </ul>
+          <ul class="rows">
+            <li>Any bank's CSV <span>confirm which column is the date, description and amount once, and later files import on their own</span></li>
+            <li>Display <span>a reading level, a light or dark theme, and four palettes, one chosen to stay distinct for colorblind readers</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="privacy" aria-labelledby="privacy-title">
+        <div class="section-head">
+          <h2 id="privacy-title">Privacy and security</h2>
+          <p>Your financial data is about as sensitive as data gets</p>
+        </div>
+        <p class="intro">The app is built to keep your data on your machine.</p>
+        <dl class="terms">
+          <div class="term">
+            <dt>Local only</dt>
+            <dd>
+              The app runs a small web server bound to <code>localhost</code>. Only your own computer can reach it;
+              nothing is exposed on your network or the internet.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>No cloud, no accounts, no bank logins</dt>
+            <dd>
+              There's no sign-up and no server of ours. The app never connects to your bank: you download statement CSVs
+              from your bank's website yourself and import them.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>No telemetry</dt>
+            <dd>
+              The app sends nothing about you or how you use it anywhere. Fonts, icons and scripts are bundled with the
+              app, and nothing loads from a CDN.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Local AI only</dt>
+            <dd>
+              The optional Chat page talks to a model running on your own computer. Your data is never sent to an online
+              AI service.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>Reminders say nothing about your money</dt>
+            <dd>
+              Check-in reminders are off until you turn them on. By email or push, they are the one thing the app sends off
+              your computer, and they say only how long it has been since you last opened it.
+            </dd>
+          </div>
+          <div class="term">
+            <dt>One file holds everything</dt>
+            <dd>
+              All your data lives in a single SQLite file in your home folder. To start over, quit the app and delete that
+              folder. Nothing is stored anywhere else.
+            </dd>
+          </div>
+        </dl>
+        <p class="note">
+          The installer includes everything the app needs. The internet is used only to download it, optionally a local
+          model, and to deliver email or push reminders if you turn them on.
+        </p>
+
+        <h3 class="subhead">What you should do</h3>
+        <ul class="rows">
+          <li>Turn on disk encryption <span>FileVault on macOS, BitLocker or Device Encryption on Windows. The data file itself isn't encrypted.</span></li>
+          <li>Never share or upload your data file <span>don't email it, put it in a shared folder, or commit it to git</span></li>
+          <li>Keep backups private <span>Time Machine and File History include the data file automatically</span></li>
+          <li>Delete statement CSVs from your Downloads folder after importing them <span>if you don't need them</span></li>
+        </ul>
+      </section>
+
+      <section id="download" aria-labelledby="download-title">
+        <div class="section-head">
+          <h2 id="download-title">Download</h2>
+          <p id="release-line">The latest release, for macOS and Windows</p>
+        </div>
+        <p class="intro" id="platform-hint">
+          Pick the installer for your computer. Installing a newer version over an older one keeps all of your data.
+        </p>
+
+        <div class="downloads">
+          <div class="dl-row" data-platform="mac-arm64">
+            <div class="dl-text">
+              <span class="dl-badge" hidden>Recommended for this computer</span>
+              <h3 class="dl-title">Mac with Apple Silicon</h3>
+              <p class="dl-desc">M1 to M4 chips: almost every Mac sold since late 2020.</p>
+              <p class="dl-meta" id="meta-mac-arm64">Wayfinder-Finance-macOS-arm64.dmg</p>
+            </div>
+            <a
+              class="dl-btn"
+              id="link-mac-arm64"
+              href="https://github.com/cochoa2/wayfinder-finance-releases/releases/latest/download/Wayfinder-Finance-macOS-arm64.dmg"
+            >
+              Download for Apple Silicon
+            </a>
+          </div>
+
+          <div class="dl-row" data-platform="mac-x86_64">
+            <div class="dl-text">
+              <span class="dl-badge" hidden>Recommended for this computer</span>
+              <h3 class="dl-title">Mac with an Intel chip</h3>
+              <p class="dl-desc">Older Macs, mostly 2020 and earlier. Apple menu &rarr; About This Mac shows which chip yours has.</p>
+              <p class="dl-meta" id="meta-mac-x86_64">Wayfinder-Finance-macOS-x86_64.dmg</p>
+            </div>
+            <a
+              class="dl-btn"
+              id="link-mac-x86_64"
+              href="https://github.com/cochoa2/wayfinder-finance-releases/releases/latest/download/Wayfinder-Finance-macOS-x86_64.dmg"
+            >
+              Download for Intel Mac
+            </a>
+          </div>
+
+          <div class="dl-row" data-platform="windows">
+            <div class="dl-text">
+              <span class="dl-badge" hidden>Recommended for this computer</span>
+              <h3 class="dl-title">Windows</h3>
+              <p class="dl-desc">Windows 10 or 11, 64-bit. Installs for your user only, so no administrator password.</p>
+              <p class="dl-meta" id="meta-windows">Wayfinder-Finance-Windows-Setup.exe</p>
+            </div>
+            <a
+              class="dl-btn"
+              id="link-windows"
+              href="https://github.com/cochoa2/wayfinder-finance-releases/releases/latest/download/Wayfinder-Finance-Windows-Setup.exe"
+            >
+              Download for Windows
+            </a>
+          </div>
+        </div>
+
+        <p class="note" id="release-status" hidden></p>
+        <p class="links">
+          <a id="link-all-releases" href="https://github.com/cochoa2/wayfinder-finance-releases/releases">All releases and history</a>
+          <a id="link-checksums" href="https://github.com/cochoa2/wayfinder-finance-releases/releases/latest/download/SHA256SUMS.txt"
+            >SHA-256 checksums</a
+          >
+        </p>
+
+        <div id="release-notes" hidden>
+          <h3 class="subhead">What changed in this release</h3>
+          <p class="release-notes-body" id="release-notes-body"></p>
+        </div>
+
+        <div class="two">
+          <div>
+            <h3 class="subhead">First-time setup</h3>
+            <p class="note">
+              The installers aren't signed with a paid Apple or Microsoft certificate, so your computer shows a one-time
+              warning the first time you open the app.
+            </p>
+            <div class="tabs" role="tablist" aria-label="Setup steps by system">
+              <button class="tab" type="button" role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="true">
+                macOS
+              </button>
+              <button class="tab" type="button" role="tab" id="tab-win" aria-controls="panel-win" aria-selected="false">
+                Windows
+              </button>
+            </div>
+
+            <div class="panel" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac">
+              <ol class="steps">
+                <li>
+                  <div>
+                    <strong>Install</strong>
+                    Open the downloaded <code>.dmg</code> and drag <strong>Wayfinder Finance</strong> onto the
+                    <strong>Applications</strong> folder.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Open it</strong>
+                    Double-click <strong>Wayfinder Finance</strong> in Applications. macOS says it &ldquo;could not
+                    verify&rdquo; the app: click <strong>Done</strong>, not Move to Trash.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Allow it once</strong>
+                    <ul class="sub-steps">
+                      <li>Open <strong>System Settings &rarr; Privacy &amp; Security</strong>.</li>
+                      <li>Scroll to the message about <strong>Wayfinder Finance</strong> and click <strong>Open Anyway</strong>.</li>
+                      <li>Enter your Mac password if asked, then click <strong>Open Anyway</strong> once more.</li>
+                    </ul>
+                    <p class="note">
+                      On macOS 14 or earlier: right-click the app in Applications, choose <strong>Open</strong>, then
+                      click <strong>Open</strong>.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>You're in</strong>
+                    Your browser opens to Wayfinder Finance after a few seconds. The very first start can take up to a
+                    minute.
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="panel" id="panel-win" role="tabpanel" aria-labelledby="tab-win" hidden>
+              <ol class="steps">
+                <li>
+                  <div>
+                    <strong>Install</strong>
+                    Double-click <code>Wayfinder-Finance-Windows-Setup.exe</code>.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Allow it once</strong>
+                    If a blue &ldquo;Windows protected your PC&rdquo; message appears, click <strong>More info</strong>,
+                    then <strong>Run anyway</strong>. You only see this while installing.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Finish the installer</strong>
+                    No administrator password is needed.
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>You're in</strong>
+                    Open <strong>Wayfinder Finance</strong> from the Start menu or the desktop shortcut. Your browser opens
+                    to the app.
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="subhead">Everyday use</h3>
+            <ul class="rows">
+              <li>Start on Profile &amp; Setup <span>then import statement CSVs under Cash Flow &rarr; Import</span></li>
+              <li>
+                Closing it
+                <span>close the browser tab when you're done; the app stops itself about ten minutes later</span>
+              </li>
+              <li>
+                Updating
+                <span>download the newest installer from this page and install it over the old one. Your data is never touched, and it upgrades itself on the next start.</span>
+              </li>
+            </ul>
+
+            <h3 class="subhead">Where your data lives</h3>
+            <ul class="rows">
+              <li>macOS <span><code>~/.wayfinder_finance/data.db</code></span></li>
+              <li>Windows <span><code>C:\Users\&lt;you&gt;\.wayfinder_finance\data.db</code></span></li>
+            </ul>
+            <p class="note">The exact path is shown in the app's sidebar.</p>
+
+            <h3 class="subhead">Optional: turn on Chat</h3>
+            <p>
+              Install <a href="https://ollama.com" rel="noreferrer">Ollama</a> and download a model once (about 5 GB):
+            </p>
+            <pre><code>ollama pull llama3.1:8b</code></pre>
+            <p class="note">
+              Prefer LM Studio, llama.cpp's server, Jan, LocalAI or vLLM? Start its local server, then choose
+              <strong>OpenAI-compatible server</strong> and its port under Settings &rarr; Model &amp; reminders.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="disclaimer" role="note">
+        <strong>Not financial advice.</strong>
+        <p>
+          This is a planning tool built on public tax rules and market assumptions. Treat its numbers as informed
+          estimates, and check big decisions with a qualified professional.
+        </p>
+      </div>
+    </main>
+
+    <footer class="foot wrap">
+      <p>
+        This page's fonts, images and scripts are served with it: nothing loads from a CDN, and there are no cookies or
+        analytics. To show the latest version number, it asks GitHub (which hosts this page) for the newest release. The
+        theme you pick is remembered in this browser only.
+      </p>
+      <p>Screenshots show the app's synthetic demo household. Every name, balance and figure in them is made up.</p>
+      <p id="footer-repo"></p>
+    </footer>
+
+    <script>
+      (function () {
+        const REPO = "cochoa2/wayfinder-finance-releases";
+        const ASSETS = {
+          "mac-arm64": "Wayfinder-Finance-macOS-arm64.dmg",
+          "mac-x86_64": "Wayfinder-Finance-macOS-x86_64.dmg",
+          windows: "Wayfinder-Finance-Windows-Setup.exe",
+        };
+
+        function setTab(which) {
+          const isWin = which === "win";
+          document.getElementById("tab-mac").setAttribute("aria-selected", String(!isWin));
+          document.getElementById("tab-win").setAttribute("aria-selected", String(isWin));
+          document.getElementById("panel-mac").hidden = isWin;
+          document.getElementById("panel-win").hidden = !isWin;
+        }
+        document.getElementById("tab-mac").addEventListener("click", function () {
+          setTab("mac");
+        });
+        document.getElementById("tab-win").addEventListener("click", function () {
+          setTab("win");
+        });
+
+        // Returns "windows", "mac-arm64", "mac-x86_64", "mac" (a Mac whose chip the browser won't say) or null.
+        // Only Chromium browsers report the chip, so most Macs come back as "mac" and neither Mac row is marked.
+        // Phones and tablets get null: nothing on this page installs on them.
+        function detectPlatform() {
+          const ua = (navigator.userAgent || "").toLowerCase();
+          const platform = (navigator.platform || "").toLowerCase();
+          const touchMac = platform === "macintel" && navigator.maxTouchPoints > 1; // iPadOS asks for desktop sites
+          if (/iphone|ipad|ipod|android/.test(ua) || touchMac) return Promise.resolve(null);
+          if (ua.includes("windows") || platform.startsWith("win")) return Promise.resolve("windows");
+          if (!ua.includes("macintosh") && !platform.startsWith("mac")) return Promise.resolve(null);
+          const hints = navigator.userAgentData;
+          if (!hints || typeof hints.getHighEntropyValues !== "function") return Promise.resolve("mac");
+          return hints
+            .getHighEntropyValues(["architecture"])
+            .then(function (values) {
+              if (values.architecture === "arm") return "mac-arm64";
+              if (values.architecture === "x86") return "mac-x86_64";
+              return "mac";
+            })
+            .catch(function () {
+              return "mac";
+            });
+        }
+
+        const HINTS = {
+          windows: "Looks like you're on Windows. Installing a newer version over an older one keeps all of your data.",
+          "mac-arm64": "Looks like you're on a Mac with Apple Silicon. Installing a newer version over an older one keeps all of your data.",
+          "mac-x86_64": "Looks like you're on a Mac with an Intel chip. Installing a newer version over an older one keeps all of your data.",
+          mac: "Looks like you're on a Mac. Most Macs from late 2020 onward have Apple Silicon; to check, open the Apple menu \u2192 About This Mac and look for \u201cChip\u201d (Apple Silicon) or \u201cProcessor\u201d (Intel).",
+        };
+
+        detectPlatform().then(function (detected) {
+          if (!detected) return;
+          const row = document.querySelector('[data-platform="' + detected + '"]');
+          if (row) {
+            row.classList.add("recommended");
+            const badge = row.querySelector(".dl-badge");
+            if (badge) badge.hidden = false;
+          }
+          setTab(detected === "windows" ? "win" : "mac");
+          document.getElementById("platform-hint").textContent = HINTS[detected];
+        });
+
+        function formatBytes(bytes) {
+          if (!bytes || bytes <= 0) return "";
+          const mb = bytes / (1024 * 1024);
+          return mb >= 100 ? Math.round(mb) + " MB" : mb.toFixed(1) + " MB";
+        }
+
+        function formatDate(iso) {
+          if (!iso) return "";
+          const d = new Date(iso);
+          if (Number.isNaN(d.getTime())) return "";
+          return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+        }
+
+        if (!REPO || REPO.startsWith("__")) return;
+        document.getElementById("footer-repo").textContent = "Releases: github.com/" + REPO;
+
+        // The one outside request: GitHub's public API, for the newest release's version, sizes and notes. The
+        // download links work without it (they point at /releases/latest/download/).
+        fetch("https://api.github.com/repos/" + REPO + "/releases/latest", {
+          headers: { Accept: "application/vnd.github+json" },
+          referrerPolicy: "no-referrer",
+        })
+          .then(function (resp) {
+            if (resp.status === 404) {
+              const status = document.getElementById("release-status");
+              status.textContent =
+                "No release has been published yet. The download buttons start working as soon as the first one is.";
+              status.hidden = false;
+              return null;
+            }
+            return resp.ok ? resp.json() : null;
+          })
+          .then(function (release) {
+            if (!release) return;
+            const published = formatDate(release.published_at);
+            if (release.tag_name) {
+              document.getElementById("release-line").textContent =
+                release.tag_name + (published ? ", released " + published : "") + ", for macOS and Windows";
+            }
+
+            const byName = {};
+            (release.assets || []).forEach(function (asset) {
+              byName[asset.name] = asset;
+            });
+            Object.keys(ASSETS).forEach(function (key) {
+              const name = ASSETS[key];
+              const asset = byName[name];
+              const link = document.getElementById("link-" + key);
+              const meta = document.getElementById("meta-" + key);
+              if (asset && asset.browser_download_url && link) link.href = asset.browser_download_url;
+              if (asset && asset.size && meta) meta.textContent = name + " \u00b7 " + formatBytes(asset.size);
+            });
+            const sums = byName["SHA256SUMS.txt"];
+            if (sums && sums.browser_download_url) {
+              document.getElementById("link-checksums").href = sums.browser_download_url;
+            }
+
+            const body = (release.body || "").trim();
+            if (body) {
+              document.getElementById("release-notes-body").textContent = body;
+              document.getElementById("release-notes").hidden = false;
+            }
+          })
+          .catch(function () {
+            // The /releases/latest/download/ links still work if this request fails.
+          });
+      })();
+    </script>
+  </body>
+</html>
