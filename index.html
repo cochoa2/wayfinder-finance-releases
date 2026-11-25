@@ -751,7 +751,16 @@
               document.getElementById("link-checksums").href = sums.browser_download_url;
             }
 
-            const body = (release.body || "").trim();
+            // Only the "What's new" part (the page already has the download steps), as plain text: headings and
+            // bold markers dropped, list dashes shown as bullets. Set as text, never as HTML.
+            const body = (release.body || "")
+              .split(/^#+\s*Download\b/m)[0]
+              .replace(/^#+\s*What's new.*$/m, "")
+              .replace(/^#+\s*/gm, "")
+              .replace(/\*\*(.+?)\*\*/g, "$1")
+              .replace(/`([^`]+)`/g, "$1")
+              .replace(/^[-*]\s+/gm, "• ")
+              .trim();
             if (body) {
               document.getElementById("release-notes-body").textContent = body;
               document.getElementById("release-notes").hidden = false;
